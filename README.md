@@ -1,10 +1,10 @@
 # GenericXMLParser
 A fast StaX based Generic XML Parser which takes nodes as input and a repeat element to serialize the xml in a text file.
 
-Objective
+#Objective
 Quickly parse an xml and write to a tab separated file nodes provided by the user. No need to create Java beans for every new XML needed.
 
-Format
+#Format
 java GenericXMLParser {repeatElement} {node1} {node2} {node3} ...
 All the node, repeatElement follows the full path from the root of XML e.g in the XML file
  <employees>
@@ -13,16 +13,15 @@ All the node, repeatElement follows the full path from the root of XML e.g in th
   </employee>
 </employees>
 
-
 full Path of node "firstName is "/employees/employee/firstName"
 full path of attribute "id" is "/employees/employee@id"
 
-Implementaion Details
+#Implementaion Details
 It combines the best of StaX approach and the DOM approach of parsing XML. Using DOM based approach we preserve the tree structure of XML but unlike DOM based approach it does not store the whole XML file in memory but the information of only skeleton XML. Using StaX approach we fill the skeleton tree with nodes as parser traveres the them. Using StaX gives parser the flexibiliy to parse Gb's of file with a very small memory foot print.
 
-Use Cases:
+#Use Cases:
 
-1.) Condiser a simple XML file. I need to extract employee list in a text file in the following format.
+# Case 1.) Condiser a simple XML file. I need to extract employee list in a text file in the following format.
 
 <employees>
   <employee id="101">
@@ -49,7 +48,7 @@ java GenericXMLParser /employees/employee /employees/employee@id /employees/empl
 102	Galilei	Grand Duchy of Tuscany, Italy	Galileo	
 103	of Alexandria	Alexandria, Hellenistic Egypt	Euclid
 
-Case 2: Above was a very simple case for parsing. Lets take a complicated case in which we need to repeat some information from top of tree with the repeated nodes. e.g. lets say some hotel booking company wants to provide a feed of all its hotels across all its states and city. The XML will be organized with country, state and city information on their respective levels and hotel level information at the lowest level. To serialize this information in a text file with every hotel having not only its hotel information but also top level information such as city, country etc we can simply parse like :
+#Case 2: Above was a very simple case for parsing. Lets take a complicated case in which we need to repeat some information from top of tree with the repeated nodes. e.g. lets say some hotel booking company wants to provide a feed of all its hotels across all its states and city. The XML will be organized with country, state and city information on their respective levels and hotel level information at the lowest level. To serialize this information in a text file with every hotel having not only its hotel information but also top level information such as city, country etc we can simply parse like :
 
 java GenericXMLParser "/hotels/location/state/city/hotel" /hotels/location@id /hotels/location/country /hotels/location/state/city/name /hotels/location/state/city/hotel/name /hotels/location/state/city/hotel/id /hotels/location/state/city/hotel/price/currency /hotels/location/state/city/hotel/price/currency/value
 
@@ -101,5 +100,5 @@ Consider the XML file.
 	</location>
 </hotels>
 
-Improvements
+#Improvements
 Take order of input from User to print in the user provided input.
