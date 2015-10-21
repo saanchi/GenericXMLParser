@@ -21,7 +21,8 @@ It combines the best of StaX approach and the DOM approach of parsing XML. Using
 
 #Use Cases:
 
-# Case 1.) Condiser a simple XML file. I need to extract employee list in a text file in the following format.
+# Case 1
+Condiser a simple XML file. I need to extract employee list in a text file in the following format.
 
 <employees>
   <employee id="101">
@@ -48,7 +49,8 @@ java GenericXMLParser /employees/employee /employees/employee@id /employees/empl
 102	Galilei	Grand Duchy of Tuscany, Italy	Galileo	
 103	of Alexandria	Alexandria, Hellenistic Egypt	Euclid
 
-#Case 2: Above was a very simple case for parsing. Lets take a complicated case in which we need to repeat some information from top of tree with the repeated nodes. e.g. lets say some hotel booking company wants to provide a feed of all its hotels across all its states and city. The XML will be organized with country, state and city information on their respective levels and hotel level information at the lowest level. To serialize this information in a text file with every hotel having not only its hotel information but also top level information such as city, country etc we can simply parse like :
+#Case 2
+Above was a very simple case for parsing. Lets take a complicated case in which we need to repeat some information from top of tree with the repeated nodes. e.g. lets say some hotel booking company wants to provide a feed of all its hotels across all its states and city. The XML will be organized with country, state and city information on their respective levels and hotel level information at the lowest level. To serialize this information in a text file with every hotel having not only its hotel information but also top level information such as city, country etc we can simply parse like :
 
 java GenericXMLParser "/hotels/location/state/city/hotel" /hotels/location@id /hotels/location/country /hotels/location/state/city/name /hotels/location/state/city/hotel/name /hotels/location/state/city/hotel/id /hotels/location/state/city/hotel/price/currency /hotels/location/state/city/hotel/price/currency/value
 
