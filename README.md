@@ -7,7 +7,8 @@ Quickly parse an xml and write to a tab separated file nodes provided by the use
 #Format
 java GenericXMLParser {repeatElement} {node1} {node2} {node3} ...
 All the node, repeatElement follows the full path from the root of XML e.g in the XML file
-``` <employees>
+```
+<employees>
   <employee id="101">
     <firstName>Leonardo</firstName>
   </employee>
@@ -23,7 +24,7 @@ It combines the best of StaX approach and the DOM approach of parsing XML. Using
 
 # Case 1
 Condiser a simple XML file. I need to extract employee list in a text file in the following format.
-
+```
 <employees>
   <employee id="101">
     <firstName>Leonardo</firstName>
@@ -41,6 +42,7 @@ Condiser a simple XML file. I need to extract employee list in a text file in th
     <location>Alexandria, Hellenistic Egypt</location>
     </employee>
 </employees>
+```
 
 I can provide above nodes as inputs to the GenericXMLParser. 
 java GenericXMLParser /employees/employee /employees/employee@id /employees/employee/firstName /employees/employee/lastName /employees/employee/location
@@ -55,6 +57,7 @@ Above was a very simple case for parsing. Lets take a complicated case in which 
 java GenericXMLParser "/hotels/location/state/city/hotel" /hotels/location@id /hotels/location/country /hotels/location/state/city/name /hotels/location/state/city/hotel/name /hotels/location/state/city/hotel/id /hotels/location/state/city/hotel/price/currency /hotels/location/state/city/hotel/price/currency/value
 
 Consider the XML file.
+```
 <hotels>
 	<location id="111">
 		<country>India</country>
@@ -101,6 +104,7 @@ Consider the XML file.
 		</state>
 	</location>
 </hotels>
+```
 
 #Improvements
 Take order of input from User to print in the user provided input.
