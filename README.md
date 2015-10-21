@@ -105,6 +105,12 @@ Consider the XML file.
 	</location>
 </hotels>
 ```
+Output will be :
+111	India	Bangalore	INR	hotel11	11	
+111	India	Bangalore	INR	hotel12	12	
+111	India	Mumbai	INR	hotel21	21	
+111	India	Mumbai	INR	hotel22	22
+
 
 ## Improvements
 Take order of input from User to print in the user provided input.
