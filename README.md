@@ -7,12 +7,12 @@ Quickly parse an xml and write to a tab separated file nodes provided by the use
 #Format
 java GenericXMLParser {repeatElement} {node1} {node2} {node3} ...
 All the node, repeatElement follows the full path from the root of XML e.g in the XML file
- <employees>
+``` <employees>
   <employee id="101">
     <firstName>Leonardo</firstName>
   </employee>
 </employees>
-
+```
 full Path of node "firstName is "/employees/employee/firstName"
 full path of attribute "id" is "/employees/employee@id"
 
