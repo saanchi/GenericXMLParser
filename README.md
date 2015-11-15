@@ -1,5 +1,5 @@
 # GenericXMLParser
-A fast StaX based Generic XML Parser which takes nodes as input and a repeat element to serialize the xml in a text file.
+A fast StaX based Generic XML Parser which translate data from XML files which have different schemas into a specific csv format.
 
 ## Objective
 Quickly parse an xml and write to a tab separated file nodes provided by the user. No need to create Java beans for every new XML needed.
